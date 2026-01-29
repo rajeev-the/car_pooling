@@ -7,21 +7,15 @@ public class Ride {
     int total_seats;
     int available_seats;
     double fare;
-    List<User> users;
+     int createdby;
 
-    public Ride(String source, String destination, int total_seats, int available_seats, double fare) {
+    public Ride(String source, String destination, int total_seats, int available_seats, double fare, int createdby) {
         this.source = source;
         this.destination = destination;
         this.total_seats = total_seats;
-
-        if (available_seats >= 0 && available_seats <= total_seats) {
-            this.available_seats = available_seats;
-        } else {
-            this.available_seats = total_seats; // or throw exception
-        }
-
+         this.available_seats = total_seats; // or throw exception
         this.fare = fare;
-        this.users = new ArrayList<User>();
+        this.createdby = createdby;
     }
 
     @Override
@@ -32,7 +26,7 @@ public class Ride {
                 ", total_seats=" + total_seats +
                 ", available_seats=" + available_seats +
                 ", fare=" + fare +
-                ", users=" + users.toString() +
+                ", users=" + createdby+
                 '}';
     }
 }

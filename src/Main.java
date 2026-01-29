@@ -21,19 +21,23 @@ public class Main {
 //    rideList.add(ride1);
 //    rideList.add(ride2);
 //    rideList.add(ride3);
+//
+// RideBooking rideBooking1 = new RideBooking();
+// User user1 = new User("rajeev",434983,"rajeev@123");
+//
+//
+//        rideBooking1.createdRide("delhi","bihar",5,4,7000,user1);
+//
+//
+//    System.out.println(rideBooking1.getRideList());
+//
+//        rideBooking1.updateUser(user1,"reshab",999999,"pppp@11");
+//        System.out.println(rideBooking1.getRideList());
 
- RideBooking rideBooking1 = new RideBooking();
- User user1 = new User("rajeev",434983,"rajeev@123");
+         Service service = new Service();
 
+//         service.createuser("rajeev","1234566","rajeevranjan@123");
 
-        rideBooking1.createdRide("delhi","bihar",5,4,7000,user1);
-
-
-    System.out.println(rideBooking1.getRideList());
-
-        rideBooking1.updateUser(user1,"reshab",999999,"pppp@11");
-        System.out.println(rideBooking1.getRideList());
-
-
+         service.createdride("lodhi road","noida",22,12,22,1);
     }
 }
