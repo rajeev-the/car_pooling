@@ -1,3 +1,4 @@
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,9 +36,16 @@ public class Main {
 //        System.out.println(rideBooking1.getRideList());
 
          Service service = new Service();
+//         service.createdride("lodhi road","noida",5,4,22,1);
 
 //         service.createuser("rajeev","1234566","rajeevranjan@123");
 
-         service.createdride("lodhi road","noida",22,12,22,1);
+//           service.createBooking(1,1,5,224);
+        //lodhi road
+        //noida
+
+
+
+
     }
 }
