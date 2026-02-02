@@ -36,7 +36,7 @@ public class Main {
 //        System.out.println(rideBooking1.getRideList());
 
          Service service = new Service();
-//         service.createdride("lodhi road","noida",5,4,22,1);
+         service.createdride("lodhi road","noida",5,4,22,1);
 
 //         service.createuser("rajeev","1234566","rajeevranjan@123");
 
