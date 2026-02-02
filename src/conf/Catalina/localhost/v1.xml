@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Context docBase="/Users/rajeevranjan/Programming/Backend/car_pool_appp/src/web">
+  <Resources cacheMaxSize="10240">
+    <PreResources base="/Users/rajeevranjan/Programming/Backend/car_pool_appp/out/production/car_pool_appp" className="org.apache.catalina.webresources.DirResourceSet" webAppMount="/WEB-INF/classes"/>
+    <PostResources base="/Users/rajeevranjan/Downloads/postgresql-42.6.0.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/postgresql-42.6.0.jar"/>
+    <PostResources base="/Users/rajeevranjan/Downloads/servlet-api.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/servlet-api.jar"/>
+  </Resources>
+</Context>

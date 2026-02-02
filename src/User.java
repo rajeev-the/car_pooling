@@ -1,6 +1,7 @@
 import java.time.Instant;
 
 public class User {
+     Integer user_id;
      String username;
     String password;
      String email;
