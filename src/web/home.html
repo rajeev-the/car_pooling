@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home | Car Pooling</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Neo-Brutalist Styles -->
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        /* Navbar */
+        .neo-navbar {
+            background: #fff;
+            border-bottom: 3px solid #111;
+        }
+
+        .neo-title {
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        /* Card */
+        .neo-card {
+            background: #fff;
+            border: 3px solid #111;
+            border-radius: 0;
+        }
+
+        /* Inputs */
+        .neo-input {
+            border: 2px solid #111;
+            border-radius: 0;
+            padding: 0.7rem 0.8rem;
+        }
+
+        .neo-input:focus {
+            box-shadow: none;
+            border-color: #000;
+        }
+
+        /* Button */
+        .neo-btn {
+            background: #111;
+            color: #fff;
+            border: 3px solid #111;
+            border-radius: 0;
+            padding: 0.75rem;
+            font-weight: 700;
+        }
+
+        .neo-btn:hover {
+            background: #eaeaea;
+            color: #111;
+        }
+
+        /* Divider */
+        .neo-divider {
+            height: 2px;
+            background: #111;
+            margin: 1.5rem 0;
+        }
+
+        /* Sliding Toggle */
+        .neo-toggle input {
+            display: none;
+        }
+
+        .neo-toggle-track {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            height: 52px;
+            border: 3px solid #111;
+            background: #fff;
+        }
+
+        .neo-toggle-option {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            cursor: pointer;
+            z-index: 2;
+            user-select: none;
+        }
+
+        .neo-toggle-indicator {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            background: #eaeaea;
+            border-right: 3px solid #111;
+            transition: transform 0.25s ease;
+            z-index: 1;
+        }
+
+        #toggleCreate:checked ~ .neo-toggle-track .neo-toggle-indicator {
+            transform: translateX(100%);
+            border-right: none;
+            border-left: 3px solid #111;
+        }
+
+        /* Progress */
+        .neo-progress {
+            border: 3px solid #111;
+            height: 16px;
+            background: #fff;
+            margin-bottom: 1.5rem;
+        }
+
+        .neo-progress-bar {
+            height: 100%;
+            width: 0%;
+            background: #6b7f3f; /* olive green */
+            transition: width 0.25s ease;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar neo-navbar py-3">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2 neo-title" href="#">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
+                <rect x="3" y="10" width="18" height="5" stroke="#111" stroke-width="2"/>
+                <path d="M6 10L8 6H16L18 10" stroke="#111" stroke-width="2"/>
+                <circle cx="7" cy="16" r="2" stroke="#111" stroke-width="2"/>
+                <circle cx="17" cy="16" r="2" stroke="#111" stroke-width="2"/>
+            </svg>
+            <span>Car Pooling</span>
+        </a>
+    </div>
+</nav>
+
+<!-- Home -->
+<div class="container d-flex align-items-center justify-content-center min-vh-100">
+    <div class="neo-card w-100" style="max-width: 560px;">
+
+        <!-- Header -->
+        <div class="p-4  border-3">
+            <h3 class="neo-title mb-1">Choose Ride Action</h3>
+            <p class="text-muted mb-0">
+                Book an existing ride or create a new one
+            </p>
+            <br>
+            <div class="neo-progress">
+                <div id="progressBar" class="neo-progress-bar"></div>
+            </div>
+
+        </div>
+
+
+        <!-- Body -->
+        <div class="p-4">
+
+            <!-- Progress -->
+
+            <form>
+
+                <!-- Action Toggle -->
+                <div class="mb-4">
+                    <label class="form-label fw-semibold">Action</label>
+
+                    <div class="neo-toggle">
+                        <input type="radio" name="rideType" id="toggleBook" checked>
+                        <input type="radio" name="rideType" id="toggleCreate">
+
+                        <div class="neo-toggle-track">
+                            <div class="neo-toggle-indicator"></div>
+
+                            <label for="toggleBook" class="neo-toggle-option">
+                                Create Ride
+                            </label>
+
+                            <label for="toggleCreate" class="neo-toggle-option">
+                                Book Ride
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Source -->
+                <div class="mb-4">
+                    <label class="form-label fw-semibold">Source</label>
+                    <input type="text" class="form-control neo-input track-field" placeholder="Pickup location">
+                </div>
+
+                <!-- Destination -->
+                <div class="mb-4">
+                    <label class="form-label fw-semibold">Destination</label>
+                    <input type="text" class="form-control neo-input track-field" placeholder="Drop location">
+                </div>
+
+                <!-- Book Ride Fields -->
+                <div id="bookFields">
+                    <div class="mb-4">
+                        <label class="form-label fw-semibold">Available Seats</label>
+                        <input type="number" min="1"
+                               class="form-control neo-input track-field"
+                               placeholder="e.g. 3">
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-semibold">Fare</label>
+                        <input type="number"
+                               class="form-control neo-input track-field"
+                               placeholder="e.g. 250">
+                    </div>
+                </div>
+
+                <div class="neo-divider"></div>
+
+                <div class="d-grid">
+                    <button type="submit" class="neo-btn">
+                        Continue
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Logic -->
+<script>
+    const bookRide = document.getElementById("toggleBook");
+    const createRide = document.getElementById("toggleCreate");
+    const bookFields = document.getElementById("bookFields");
+    const progressBar = document.getElementById("progressBar");
+    const fields = document.querySelectorAll(".track-field");
+
+    function toggleFields() {
+        bookFields.style.display = bookRide.checked ? "block" : "none";
+        updateProgress();
+    }
+
+    function updateProgress() {
+        let total = bookRide.checked ? 4 : 2;
+        let filled = 0;
+
+        fields.forEach(field => {
+            if (
+                field.value.trim() !== "" &&
+                (bookRide.checked || !bookFields.contains(field))
+            ) {
+                filled++;
+            }
+        });
+
+        progressBar.style.width = (filled / total) * 100 + "%";
+    }
+
+    bookRide.addEventListener("change", toggleFields);
+    createRide.addEventListener("change", toggleFields);
+    fields.forEach(f => f.addEventListener("input", updateProgress));
+
+    toggleFields();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

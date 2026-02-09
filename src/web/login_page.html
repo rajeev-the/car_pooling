@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Create User | Car Pooling</title>
+    <title>Login | Car Pooling</title>
 
-    <!-- Bootstrap -->
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Neo-Brutalist Styles -->
@@ -31,17 +31,15 @@
             letter-spacing: -0.5px;
         }
 
-        .neo-input,
-        .neo-select {
+        .neo-input {
             border: 2px solid #111;
             border-radius: 0;
-            padding: 0.65rem 0.75rem;
+            padding: 0.7rem 0.8rem;
         }
 
-        .neo-input:focus,
-        .neo-select:focus {
-            box-shadow: none;
+        .neo-input:focus {
             border-color: #000;
+            box-shadow: none;
         }
 
         .neo-btn {
@@ -70,45 +68,28 @@
 <!-- Navbar -->
 <nav class="navbar neo-navbar py-3">
     <div class="container">
-
-        <!-- Brand -->
-        <a href="#" class="navbar-brand d-flex align-items-center gap-2 neo-title">
-
-            <!-- Car SVG Icon -->
-            <svg
-                    width="32"
-                    height="32"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-            >
+        <a class="navbar-brand d-flex align-items-center gap-2 neo-title" href="#">
+            <!-- Car SVG -->
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
                 <rect x="3" y="10" width="18" height="5" stroke="#111" stroke-width="2"/>
                 <path d="M6 10L8 6H16L18 10" stroke="#111" stroke-width="2"/>
                 <circle cx="7" cy="16" r="2" stroke="#111" stroke-width="2"/>
                 <circle cx="17" cy="16" r="2" stroke="#111" stroke-width="2"/>
             </svg>
-
-            <!-- Brand Text -->
-            <span class="mb-0">
-                Car Pooling
-            </span>
-
+            <span>Car Pooling</span>
         </a>
-
     </div>
 </nav>
 
-
-<!-- Main -->
+<!-- Login Section -->
 <div class="container d-flex align-items-center justify-content-center min-vh-100">
-    <div class="neo-card w-100" style="max-width: 420px;">
+    <div class="neo-card w-100" style="max-width: 400px;">
 
         <!-- Header -->
         <div class="p-4 border-bottom border-3">
-            <h3 class="neo-title mb-1">Create User</h3>
+            <h3 class="neo-title mb-1">Login</h3>
             <p class="text-muted mb-0">
-                Enterprise-grade account creation
+                Access your account
             </p>
         </div>
 
@@ -116,29 +97,39 @@
         <div class="p-4">
             <form>
 
+                <!-- Username -->
                 <div class="mb-4">
                     <label class="form-label fw-semibold">Username</label>
-                    <input type="text" class="form-control neo-input" placeholder="john_doe" required>
+                    <input
+                            type="text"
+                            class="form-control neo-input"
+                            placeholder="Enter username"
+                            required
+                    >
                 </div>
 
-                <div class="mb-4">
-                    <label class="form-label fw-semibold">Email</label>
-                    <input type="email" class="form-control neo-input" placeholder="name@company.com" required>
-                    <div class="form-text">
-                        Used for account communication.
-                    </div>
-                </div>
-
+                <!-- Password -->
                 <div class="mb-4">
                     <label class="form-label fw-semibold">Password</label>
-                    <input type="password" class="form-control neo-input" placeholder="••••••••" required>
+                    <input
+                            type="password"
+                            class="form-control neo-input"
+                            placeholder="••••••••"
+                            required
+                    >
                 </div>
 
+                <!-- Login Button -->
                 <div class="d-grid">
-                    <button type="submit" class="neo-btn">
-                        Create Account
+                    <button
+                            type="button"
+                            class="neo-btn"
+                            onclick="window.location.href='home.html'"
+                    >
+                        Login
                     </button>
                 </div>
+
 
             </form>
         </div>
@@ -146,12 +137,13 @@
         <!-- Footer -->
         <div class="neo-footer text-center p-3">
             <small>
-                Already registered?
-                <a href="./login_page.html" class="fw-bold text-decoration-none text-dark">
-                    Login
+                New user?
+                <a href="./index.html" class="fw-bold text-dark text-decoration-none">
+                    Create account
                 </a>
             </small>
         </div>
+
     </div>
 </div>
 

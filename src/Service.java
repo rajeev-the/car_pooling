@@ -50,6 +50,7 @@ public class Service {
                        fare,
                        createdby
                );
+               System.out.println("Ride " + rideId + " has been created");
            }
 
        } catch (Exception e) {
